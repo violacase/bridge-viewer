@@ -56,11 +56,18 @@ function bmlDataApi() {
   }
 }
 
-export default defineConfig(({ command }) => ({
+export default defineConfig(({ mode }) => ({
   // GitHub Pages serves a project site (not a user/org site) from
   // https://<user>.github.io/bridge-viewer/, so built asset URLs need that
-  // prefix. Only applied for `vite build` -- the dev server still serves
-  // from "/" so `npm run dev` keeps working at the plain localhost root.
-  base: command === 'build' ? '/bridge-viewer/' : '/',
+  // prefix. Keyed on `mode`, not `command`: Vite resolves `vite preview`
+  // with command "serve" (same as `vite dev`) but mode "production" --
+  // using `command` here meant `vite preview` got base "/" while the
+  // already-built dist/index.html it's serving has "/bridge-viewer/"
+  // hardcoded into its asset URLs, so every asset request 404'd into the
+  // SPA fallback and the app never mounted. `mode` correctly distinguishes
+  // "the interactive dev server" (development) from "anything serving an
+  // actual production build" (production) -- which is what preview is
+  // for: matching what actually gets deployed.
+  base: mode === 'development' ? '/' : '/bridge-viewer/',
   plugins: [vue(), bmlDataApi()],
 }))

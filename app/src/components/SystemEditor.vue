@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import ItemEditor from './ItemEditor.vue'
-import { saveSystem, downloadJson } from '../utils/dataApi'
+import { saveSystem, downloadJson, SAVE_API_AVAILABLE } from '../utils/dataApi'
 
 const props = defineProps({
   data: { type: Object, required: true },
@@ -54,10 +54,9 @@ async function onSave() {
     status.value = { kind: 'ok', message: `Saved to src/data/${props.filename}` }
     emit('saved', props.filename)
   } catch (err) {
-    status.value = {
-      kind: 'error',
-      message: `${err.message} -- is "npm run dev" running (the save API is dev-only)?`,
-    }
+    // err.message is already a complete, specific sentence -- see
+    // saveSystem() in utils/dataApi.js for what each failure mode says.
+    status.value = { kind: 'error', message: err.message }
   }
 }
 
@@ -112,8 +111,19 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', beforeUnload))
       <button type="button" @click="addItem">+ Add item</button>
     </div>
 
+    <p v-if="!SAVE_API_AVAILABLE" class="save-notice">
+      This is a deployed, read-only copy -- saving only works when running the app locally via
+      <code>npm run dev</code>. Use "Download JSON" to keep your changes.
+    </p>
+
     <div class="save-bar">
-      <button type="button" class="primary" :disabled="!dirty" @click="onSave">
+      <button
+        v-if="SAVE_API_AVAILABLE"
+        type="button"
+        class="primary"
+        :disabled="!dirty"
+        @click="onSave"
+      >
         {{ dirty ? 'Save changes' : 'Saved' }}
       </button>
       <button type="button" @click="onDownload">Download JSON</button>
@@ -162,6 +172,21 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', beforeUnload))
   align-items: center;
   gap: 0.5rem;
   margin-top: 1rem;
+}
+
+.save-notice {
+  margin: 1rem 0 0;
+  padding-left: 0.6rem;
+  border-left: 2px solid var(--suit-diamond);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.save-notice code {
+  font-family: var(--font-tabular);
+  background: var(--row-hover);
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
 }
 
 .save-bar {
