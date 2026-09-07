@@ -128,6 +128,12 @@ function moveDown() {
 
 .bid-input {
   width: 7rem;
+  font-family: var(--font-tabular);
+  font-weight: 600;
+}
+
+.bid-preview {
+  font-family: var(--font-tabular);
   font-weight: 600;
 }
 

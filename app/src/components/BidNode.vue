@@ -20,7 +20,7 @@ function toggle() {
 <template>
   <li class="bid-node">
     <div class="bid-row" :class="{ clickable: hasChildren }" @click="toggle">
-      <span class="toggle" aria-hidden="true">{{ hasChildren ? (expanded ? '−' : '+') : '' }}</span>
+      <span class="toggle" aria-hidden="true">{{ hasChildren ? (expanded ? '▾' : '▸') : '' }}</span>
       <span class="bid" v-html="formatBid(node.bid)"></span>
       <span class="desc" v-html="formatBmlText(node.desc)"></span>
     </div>
@@ -38,9 +38,8 @@ function toggle() {
 .bid-row {
   display: flex;
   align-items: baseline;
-  gap: 0.5rem;
-  padding: 0.15rem 0.25rem;
-  border-radius: 4px;
+  gap: 0.6rem;
+  padding: 0.3rem 0.4rem;
 }
 
 .bid-row.clickable {
@@ -52,16 +51,22 @@ function toggle() {
 }
 
 .toggle {
-  width: 1rem;
+  width: 0.9rem;
   flex: none;
   color: var(--text-muted);
-  font-family: monospace;
+  font-size: 0.7rem;
 }
 
+/* Tabular, not decorative: real convention cards align the bid column so
+   the eye can scan a whole auction at a glance regardless of "1C" vs
+   "Pass" vs "3NT" differing in length -- that's what the monospace and
+   fixed width are for. */
 .bid {
   flex: none;
-  min-width: 3.5rem;
+  min-width: 3.75rem;
+  font-family: var(--font-tabular);
   font-weight: 600;
+  font-variant-ligatures: none;
 }
 
 .desc {
@@ -70,7 +75,7 @@ function toggle() {
 
 ul.children {
   margin: 0;
-  padding-left: 1.25rem;
+  padding-left: 1.4rem;
   border-left: 1px solid var(--tree-line);
 }
 </style>

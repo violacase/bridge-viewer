@@ -133,7 +133,10 @@ versa), so pick one as the source of truth per system.
   is already the real list of top-level bids.
 - `skipped_types` lists any LaTeX-only content (`DIAGRAM`, `TABLE`, `BIDDING`) found
   in the file. Like the upstream `bml2html.py`, this script doesn't render those --
-  they don't currently appear in the `bridge-systems` files.
+  they don't currently appear in the `bridge-systems` files, but if a system ever
+  does use one, `SystemDocument.vue` shows a small notice ("Not shown here: 2 hand
+  diagrams...") rather than silently dropping it with no on-screen sign anything
+  was left out.
 
 ## Ideas for later
 

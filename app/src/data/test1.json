@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "TITLE": "test1",
+    "AUTHOR": "Kees de Haan",
+    "DESCRIPTION": "NP"
+  },
+  "items": [
+    {
+      "type": "bidtable",
+      "children": [
+        {
+          "bid": "4c",
+          "desc": "",
+          "export": true,
+          "children": []
+        }
+      ]
+    }
+  ],
+  "skipped_types": []
+}

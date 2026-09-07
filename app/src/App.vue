@@ -109,10 +109,11 @@ async function createSystem() {
 .mode-toggle button {
   background: var(--row-hover);
   border: 1px solid var(--tree-line);
-  border-radius: 6px;
+  border-radius: 3px;
   padding: 0.35rem 0.75rem;
   cursor: pointer;
   color: var(--text);
+  font-family: var(--font-body);
 }
 
 .system-picker button.active,

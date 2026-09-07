@@ -64,9 +64,32 @@ function replaceBidSuits(match) {
     .replaceAll('N', 'NT')
 }
 
-// A digit followed by one or more suit letters, e.g. "1C", "2NT", "3SX".
+// A digit followed by one or more suit letters, e.g. "1C", "2NT", "1HS".
 // The N(?!T) guard keeps "NT" itself from being treated as a suit letter.
-const BID_SUIT_PATTERN = /\d(?:[CDHS]|N(?!T))+/g
+// The trailing (?![a-zA-Z]) guard matters more than it looks: BML's own
+// grammar has non-suit strain placeholders that can start with a suit
+// letter -- "STEP"/"STEPS" (relay-step bidding: real tokens found across
+// the bridge-systems corpus include "1step", "2steps", "3steps", "4steps")
+// starts with the same letter as Spades. Without this guard, "1step" would
+// match just the "1s", get spade-ified, and leave "tep" dangling --
+// exactly the kind of silent-corruption bug this file is trying to avoid.
+// Requiring a non-letter after the match means the whole "1step" token
+// fails to match at all (correct: it's not a suit, leave it alone) instead
+// of matching a misleading prefix of it.
+const BID_SUIT_PATTERN = /\d(?:[CDHS]|N(?!T))+(?![a-zA-Z])/g
+
+// Case-insensitive twin of the above, for the dedicated bid-token field
+// only (formatBid) -- never for formatBmlText's prose. The bid field holds
+// one short token, never free text, so accepting "4c" alongside "4C" is
+// just being forgiving. The same leniency in prose would be a real bug:
+// existing descriptions contain ordinals like "1st and 2nd NV" (see
+// system-WG-GJP.json), and a case-insensitive match would consume the "n"
+// and "d" in "2nd" as suit letters and mangle it.
+const BID_SUIT_PATTERN_CI = /\d(?:[CDHScdhs]|[Nn](?![Tt]))+(?![a-zA-Z])/g
+
+function replaceBidSuitsCaseInsensitive(match) {
+  return match.replace(/[CDHScdhs]/g, (ch) => SUIT_SPANS[ch.toUpperCase()]).replace(/[Nn]/g, 'NT')
+}
 
 /**
  * Format free-text description/paragraph content: suit shorthand (!c !d !h !s),
@@ -111,16 +134,34 @@ export function formatBmlText(raw) {
 }
 
 /**
- * Format a bid token (Node.bid): "P" -> "Pass", "D" -> "Dbl", "R" -> "Rdbl",
- * plus suit-letter substitution. Sequences like "1C-1D-1N" are supported --
- * each segment gets the suit substitution independently.
+ * Format a bid token (Node.bid): "P"/"D"/"R" -> "Pass"/"Dbl"/"Rdbl", plus
+ * suit-letter substitution. Sequences like "1C-1D-1N" are supported -- each
+ * segment gets the suit substitution independently. Real BML bid tokens
+ * only ever use bare *uppercase* suit letters ("1C", "1HS"), never the "!c"
+ * shorthand and never lowercase -- but this field accepts all of "1C",
+ * "1c" and "1!c" for typing convenience, since a bid input rendering
+ * nothing for text you just typed reads as broken regardless of what the
+ * "real" grammar allows. (formatBmlText's suit matching stays strictly
+ * uppercase/case-sensitive -- see BID_SUIT_PATTERN_CI's comment for why
+ * prose can't safely get the same leniency.)
  */
 export function formatBid(bid) {
   let text = bid
-  if (text === 'P') text = 'Pass'
-  else if (text === 'D') text = 'Dbl'
-  else if (text === 'R') text = 'Rdbl'
+  const upper = text.toUpperCase()
+  if (upper === 'P') text = 'Pass'
+  else if (upper === 'D') text = 'Dbl'
+  else if (upper === 'R') text = 'Rdbl'
 
-  const html = escapeHtml(text)
-  return html.replace(BID_SUIT_PATTERN, replaceBidSuits)
+  let html = escapeHtml(text)
+
+  // must run before BID_SUIT_PATTERN_CI: once "!c" becomes a <span>, the
+  // digit before it is no longer directly adjacent to a bare letter, so
+  // there's no risk of the two passes double-matching the same suit.
+  html = html
+    .replaceAll('!c', SUIT_SPANS.C)
+    .replaceAll('!d', SUIT_SPANS.D)
+    .replaceAll('!h', SUIT_SPANS.H)
+    .replaceAll('!s', SUIT_SPANS.S)
+
+  return html.replace(BID_SUIT_PATTERN_CI, replaceBidSuitsCaseInsensitive)
 }
