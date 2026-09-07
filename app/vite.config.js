@@ -56,6 +56,11 @@ function bmlDataApi() {
   }
 }
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  // GitHub Pages serves a project site (not a user/org site) from
+  // https://<user>.github.io/bridge-viewer/, so built asset URLs need that
+  // prefix. Only applied for `vite build` -- the dev server still serves
+  // from "/" so `npm run dev` keeps working at the plain localhost root.
+  base: command === 'build' ? '/bridge-viewer/' : '/',
   plugins: [vue(), bmlDataApi()],
-})
+}))
