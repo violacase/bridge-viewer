@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --row-hover: #f2f2f2;
+  --tree-line: #dcdcdc;
+  --accent: #2563eb;
+
+  /* Suit colors, kept consistent with bml's own bml.css so the web view
+     matches the PDF/HTML output people already know. */
+  --suit-club: #1a7f37;
+  --suit-diamond: #b35900;
+  --suit-heart: #cc2936;
+  --suit-spade: #1a1a1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17181c;
+    --text: #e8e8e8;
+    --text-muted: #9a9a9a;
+    --row-hover: #23252b;
+    --tree-line: #33353c;
+    --accent: #5b9dff;
+
+    --suit-diamond: #e08a2b;
+    --suit-heart: #ff6b6f;
+    --suit-spade: #e8e8e8;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+}
+
+.suit {
+  font-weight: 600;
+}
+
+.suit-c {
+  color: var(--suit-club);
+}
+
+.suit-d {
+  color: var(--suit-diamond);
+}
+
+.suit-h {
+  color: var(--suit-heart);
+}
+
+.suit-s {
+  color: var(--suit-spade);
+}
+
+code {
+  background: var(--row-hover);
+  border-radius: 3px;
+  padding: 0.1em 0.3em;
+}
+
+/* Abbreviations (BAL, HCP, FG, ...) get a native tooltip via title="" --
+   see app/src/reference/abbreviations.json and utils/formatText.js. */
+abbr[title] {
+  text-decoration: underline dotted;
+  text-decoration-color: var(--text-muted);
+  text-underline-offset: 2px;
+  cursor: help;
+}

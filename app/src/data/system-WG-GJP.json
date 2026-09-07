@@ -1,0 +1,1352 @@
+{
+  "meta": {
+    "TITLE": "WG-GJP 1.0",
+    "AUTHOR": "Gert-Jan Paulissen",
+    "DESCRIPTION": "Based on Dutch doubleton (five card major, Multi, Muiderberg) but with a variable NT (11-13 1st and 2nd NV else 14-16)"
+  },
+  "items": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Introduction"
+    },
+    {
+      "type": "paragraph",
+      "text": "Let's start with the basic opening structure of the system:"
+    },
+    {
+      "type": "bidtable",
+      "children": [
+        {
+          "bid": "1C",
+          "desc": "2+!c, NAT or BAL, 11+ HCP (11+ if BAL)",
+          "export": true,
+          "children": []
+        },
+        {
+          "bid": "1D",
+          "desc": "4+!d, 11+ HCP (11+ if BAL)",
+          "export": true,
+          "children": []
+        },
+        {
+          "bid": "1HS",
+          "desc": "5+!h/!s, 11+ HCP (11+ if BAL)",
+          "export": true,
+          "children": []
+        },
+        {
+          "bid": "1N",
+          "desc": "11-13 HCP 1st and 2nd NV else 14-16 HCP",
+          "export": true,
+          "children": []
+        },
+        {
+          "bid": "2C",
+          "desc": "Weak-two in !d / Any game force except !d",
+          "export": true,
+          "children": []
+        },
+        {
+          "bid": "2D",
+          "desc": "Multi-coloured: 6+!h/6+!s and 5--10 HCP or 22--24 BAL or FG with !d",
+          "export": true,
+          "children": []
+        },
+        {
+          "bid": "2M",
+          "desc": "5M, 4+m, 5-10 HCP",
+          "export": true,
+          "children": []
+        },
+        {
+          "bid": "2N",
+          "desc": "20-22 HCP, BAL (5M332 or 5m422 possible) and maybe even 4441, 5431 or 6322 (no 5+M)",
+          "export": true,
+          "children": []
+        },
+        {
+          "bid": "3X",
+          "desc": "PRE",
+          "export": true,
+          "children": []
+        },
+        {
+          "bid": "3N",
+          "desc": "Gambling",
+          "export": true,
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "The 2!c opening"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Answers"
+    },
+    {
+      "type": "bidtable",
+      "children": [
+        {
+          "bid": "2C",
+          "desc": "One of:\\n1) weak-two in !d\\n2) 25+ NT\\n3) FG in !c, !h or !s",
+          "export": true,
+          "children": [
+            {
+              "bid": "2D",
+              "desc": "(R)",
+              "export": true,
+              "children": [
+                {
+                  "bid": "P",
+                  "desc": "weak-two in !d",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "2H",
+                  "desc": "FG in !h",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "2S",
+                      "desc": "(R), any hand not suitable for other bids hence 0+ HCP",
+                      "export": true,
+                      "children": [
+                        {
+                          "bid": "2N",
+                          "desc": "4!s",
+                          "export": true,
+                          "children": []
+                        },
+                        {
+                          "bid": "3m",
+                          "desc": "4+m",
+                          "export": true,
+                          "children": []
+                        },
+                        {
+                          "bid": "3H",
+                          "desc": "6!h",
+                          "export": true,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "bid": "2N",
+                      "desc": "5+!s, 6+ HCP",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "3m",
+                      "desc": "5+m, 6+ HCP",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "3H",
+                      "desc": "fit, at least Hxx or xxxx, 6+ HCP",
+                      "export": true,
+                      "children": [
+                        {
+                          "bid": "3S",
+                          "desc": "no SPL",
+                          "export": true,
+                          "children": []
+                        },
+                        {
+                          "bid": "3N",
+                          "desc": "SPL !s",
+                          "export": true,
+                          "children": []
+                        },
+                        {
+                          "bid": "4m",
+                          "desc": "SPL m",
+                          "export": true,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "bid": "3S",
+                      "desc": "fit, at least Hxx or xxxx, 6+ HCP, SPL !s",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "3N",
+                      "desc": "fit, at least Hxx or xxxx, 6+ HCP, SPL !d",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "4C",
+                      "desc": "fit, at least Hxx or xxxx, 6+ HCP, SPL !c",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "2S",
+                  "desc": "FG in !s",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "2N",
+                      "desc": "(R), any hand not suitable for other bids hence 0+ HCP",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "3m",
+                      "desc": "5+m, 6+ HCP",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "3H",
+                      "desc": "5+!h, 6+ HCP",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "3S",
+                      "desc": "fit, at least Hxx or xxxx, 6+ HCP",
+                      "export": true,
+                      "children": [
+                        {
+                          "bid": "3N",
+                          "desc": "no SPL",
+                          "export": true,
+                          "children": []
+                        },
+                        {
+                          "bid": "4m",
+                          "desc": "SPL m",
+                          "export": true,
+                          "children": []
+                        },
+                        {
+                          "bid": "4H",
+                          "desc": "SPL !h",
+                          "export": true,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "bid": "3N",
+                      "desc": "fit, at least Hxx or xxxx, 6+ HCP, SPL !h",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "4m",
+                      "desc": "fit, at least Hxx or xxxx, 6+ HCP, SPL m",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "2N",
+                  "desc": "25+HCP, BAL",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3C",
+                  "desc": "FG in !c, one of:\\n1) 4M\\n2) 1-suiter, not a solid suit plus stoppers and 9 tricks",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "3D",
+                      "desc": "(R)",
+                      "export": true,
+                      "children": [
+                        {
+                          "bid": "3M",
+                          "desc": "variant 1",
+                          "export": true,
+                          "children": [
+                            {
+                              "bid": "4C",
+                              "desc": "S/A for !c",
+                              "export": true,
+                              "children": []
+                            },
+                            {
+                              "bid": "4D",
+                              "desc": "S/A for M",
+                              "export": true,
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "bid": "3N",
+                          "desc": "variant 2",
+                          "export": true,
+                          "children": []
+                        },
+                        {
+                          "bid": "4m",
+                          "desc": "variant 2",
+                          "export": true,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "bid": "3M",
+                      "desc": "5+M",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "3D",
+                  "desc": "FG, 5+!c-4+!d",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "3M",
+                      "desc": "stopper",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "4C",
+                      "desc": "S/A for !c",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "4D",
+                      "desc": "S/A for !d",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "3M",
+                  "desc": "FG, 5+!c-5M, clubs better or longer",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "4C",
+                      "desc": "S/A for !c",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "4D",
+                      "desc": "S/A for M",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "3N",
+                  "desc": "FG in !c, 1-suiter, a solid suit plus stoppers and 9 tricks",
+                  "export": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "bid": "2M",
+              "desc": "5+M, F1R",
+              "export": true,
+              "children": [
+                {
+                  "bid": "2N",
+                  "desc": "25+ HCP, BAL",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3D",
+                  "desc": "weak-two in !d, no fit, NF",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "3M",
+                      "desc": "FG",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "3M",
+                  "desc": "weak-two in !d, fit, MIN",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "4M",
+                  "desc": "weak-two in !d, fit, MAX",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "2X",
+                  "desc": "FG, system-on if possible",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3X",
+                  "desc": "FG, system-on if possible",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3N",
+                  "desc": "FG, system-on if possible",
+                  "export": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "bid": "2N",
+              "desc": "(R), STR",
+              "export": true,
+              "children": [
+                {
+                  "bid": "3C",
+                  "desc": "weak-two, not MAX or no good suit",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "3D",
+                      "desc": "NF",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "3D",
+                  "desc": "weak-two, MAX, good suit, SPL !c",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3H",
+                  "desc": "weak-two, MAX, good suit, SPL !h",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3S",
+                  "desc": "weak-two, MAX, good suit, SPL !s",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3N",
+                  "desc": "weak-two, MAX, good suit, no SPL",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "4X",
+                  "desc": "same meaning and development as after 2!c-2!d-3X",
+                  "export": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "bid": "3C",
+              "desc": "6+!c, INV",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "3D",
+              "desc": "PRE",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "3M",
+              "desc": "6M, INV",
+              "export": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Intervention"
+    },
+    {
+      "type": "paragraph",
+      "text": "We just keep it simple: a pass promises clubs, redouble is a Puppet to 2!d\nwith an own suit and a weak hand. The rest is system-on."
+    },
+    {
+      "type": "bidtable",
+      "children": [
+        {
+          "bid": "2C-(D)",
+          "desc": "",
+          "export": true,
+          "children": [
+            {
+              "bid": "P",
+              "desc": "5+!c, NF",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "R",
+              "desc": "Puppet to 2!d",
+              "export": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "The 2!d opening"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Answers"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Changes"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "2018-01-09"
+    },
+    {
+      "type": "list",
+      "items": [
+        "2!d-2!s is positive\n",
+        "2!d-2!s-3NT is 22-24 HCP, BAL"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Description"
+    },
+    {
+      "type": "bidtable",
+      "children": [
+        {
+          "bid": "2D",
+          "desc": "Multi-coloured, one of:\\n1) weak-two in a major\\n2) 22-24 NT\\n3) FG in !d",
+          "export": true,
+          "children": [
+            {
+              "bid": "2H",
+              "desc": "(R)",
+              "export": true,
+              "children": [
+                {
+                  "bid": "2S",
+                  "desc": "weak-two in !s",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "2N",
+                      "desc": "(R) asking for shortness",
+                      "export": true,
+                      "children": [
+                        {
+                          "bid": "3CDH",
+                          "desc": "Splinter, MIN/MAX",
+                          "export": true,
+                          "children": []
+                        },
+                        {
+                          "bid": "3S",
+                          "desc": "MIN",
+                          "export": true,
+                          "children": []
+                        },
+                        {
+                          "bid": "3N",
+                          "desc": "MAX",
+                          "export": true,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "bid": "3m",
+                      "desc": "T/P, no short !h (else 3m response)",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "3H",
+                      "desc": "6+!h, INV",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "3S",
+                      "desc": "PRE",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "2N",
+                  "desc": "22-24 NT, see 2NT opening",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3C",
+                  "desc": "FG in !d, one of:\\na) 4M\\nb) 1-suiter, not a solid suit plus stoppers and 9 tricks",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "3D",
+                      "desc": "(R)",
+                      "export": true,
+                      "children": [
+                        {
+                          "bid": "3M",
+                          "desc": "variant a",
+                          "export": true,
+                          "children": [
+                            {
+                              "bid": "4C",
+                              "desc": "S/A for M",
+                              "export": true,
+                              "children": []
+                            },
+                            {
+                              "bid": "4D",
+                              "desc": "S/A for !d",
+                              "export": true,
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "bid": "3N",
+                          "desc": "variant b",
+                          "export": true,
+                          "children": []
+                        },
+                        {
+                          "bid": "4m",
+                          "desc": "variant b",
+                          "export": true,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "bid": "3M",
+                      "desc": "5+M",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "3D",
+                  "desc": "FG, 5+!d-4+!c",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "3M",
+                      "desc": "stopper",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "4C",
+                      "desc": "S/A for !c",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "4D",
+                      "desc": "S/A for !d",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "3M",
+                  "desc": "FG, 5+!d-5M",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "4C",
+                      "desc": "S/A for M",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "4D",
+                      "desc": "S/A for !d",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "3N",
+                  "desc": "FG in !d, 1-suiter, a solid suit plus stoppers and 9 tricks",
+                  "export": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "bid": "2S",
+              "desc": "NF, opposite a weak-two in !s, positive (normally 10+ HCP)",
+              "export": true,
+              "children": [
+                {
+                  "bid": "2N",
+                  "desc": "weak-two in !h",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "3m",
+                      "desc": "5!s-5m, FG",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "3H",
+                      "desc": "NF",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "3S",
+                      "desc": "6!s, INV",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "3X",
+                  "desc": "see 2!d-2!h-3X",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3N",
+                  "desc": "22-24 HCP, BAL",
+                  "export": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "bid": "2N",
+              "desc": "(R), STR",
+              "export": true,
+              "children": [
+                {
+                  "bid": "3C",
+                  "desc": "weak-two in !h, not MAX or no good suit",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3D",
+                  "desc": "weak-two in !s, not MAX or no good suit",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3H",
+                  "desc": "weak-two in !s, MAX, good suit",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3S",
+                  "desc": "weak-two in !h, MAX, good suit",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3N",
+                  "desc": "solid weak-two",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "4X",
+                  "desc": "same meaning and development as after 2!d-2!h-3X",
+                  "export": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "bid": "3m",
+              "desc": "T/P, short !h (else 2!h response)",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "3M",
+              "desc": "P/C",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "3N",
+              "desc": "T/P, short !h",
+              "export": true,
+              "children": [
+                {
+                  "bid": "4C",
+                  "desc": "TRF for !h (e.g. KQJ109x)",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "4D",
+                  "desc": "TRF for !s",
+                  "export": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "bid": "4C",
+              "desc": "ART, asks for transfer",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "4D",
+              "desc": "ART, asks for major",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "4M",
+              "desc": "NAT, T/P",
+              "export": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Intervention"
+    },
+    {
+      "type": "paragraph",
+      "text": "We just keep it simple: a pass promises diamonds, redouble is a Puppet to 2!h\nin order to play with a long suit. The rest is system-on."
+    },
+    {
+      "type": "bidtable",
+      "children": [
+        {
+          "bid": "2D-(D)",
+          "desc": "",
+          "export": true,
+          "children": [
+            {
+              "bid": "P",
+              "desc": "promises !d",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "R",
+              "desc": "PUP to 2!h, T/P in our own suit",
+              "export": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bidtable",
+      "children": [
+        {
+          "bid": "2D-(2M)",
+          "desc": "",
+          "export": true,
+          "children": [
+            {
+              "bid": "P",
+              "desc": "NF",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "D",
+              "desc": "P/C",
+              "export": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bidtable",
+      "children": [
+        {
+          "bid": "2D-(3m)",
+          "desc": "",
+          "export": true,
+          "children": [
+            {
+              "bid": "D",
+              "desc": "PEN",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "3M",
+              "desc": "P/C",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "4X",
+              "desc": "see 2!d-4X",
+              "export": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bidtable",
+      "children": [
+        {
+          "bid": "2D-(P)-2N-(3m)",
+          "desc": "",
+          "export": true,
+          "children": [
+            {
+              "bid": "D",
+              "desc": "that was my bid",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "P",
+              "desc": "3om was my bid",
+              "export": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bidtable",
+      "children": [
+        {
+          "bid": "2D-(P)-2N-(3M)",
+          "desc": "",
+          "export": true,
+          "children": [
+            {
+              "bid": "D",
+              "desc": "PEN, my suit",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "P",
+              "desc": "oM, MIN",
+              "export": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Fit after 1M"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Answers"
+    },
+    {
+      "type": "bidtable",
+      "children": [
+        {
+          "bid": "1M",
+          "desc": "",
+          "export": true,
+          "children": [
+            {
+              "bid": "2M",
+              "desc": "fit, 7-9 (10) HCP",
+              "export": true,
+              "children": [
+                {
+                  "bid": "3M",
+                  "desc": "(mild) INV, normally 6M",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "2S/3H",
+                  "desc": "NAT, F",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "2N",
+                  "desc": "limit",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3m",
+                  "desc": "NAT, slam try",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "4M",
+                  "desc": "S/O",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "4m",
+                  "desc": "SPL, S/T",
+                  "export": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "bid": "2N",
+              "desc": "at least 3M and either a limit or a (limited) gameforcing hand",
+              "export": true,
+              "children": [
+                {
+                  "bid": "3C",
+                  "desc": "slam try",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "3D",
+                      "desc": "relay, positive",
+                      "export": true,
+                      "children": [
+                        {
+                          "bid": "3M",
+                          "desc": "BAL",
+                          "export": true,
+                          "children": []
+                        },
+                        {
+                          "bid": "3X",
+                          "desc": "NAT (X = oM)",
+                          "export": true,
+                          "children": []
+                        },
+                        {
+                          "bid": "3N",
+                          "desc": "SPL in the other major",
+                          "export": true,
+                          "children": []
+                        },
+                        {
+                          "bid": "4m",
+                          "desc": "SPL m",
+                          "export": true,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "bid": "3M",
+                      "desc": "minimum, sorry",
+                      "export": true,
+                      "children": [
+                        {
+                          "bid": "3N",
+                          "desc": "NAT (since slam is almost impossible)",
+                          "export": true,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "bid": "3X",
+                      "desc": "NAT (X = oM)",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "3N",
+                      "desc": "SPL in the other major",
+                      "export": true,
+                      "children": []
+                    },
+                    {
+                      "bid": "4m",
+                      "desc": "SPL",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "3D",
+                  "desc": "game try",
+                  "export": true,
+                  "children": [
+                    {
+                      "bid": "3N",
+                      "desc": "NAT (since slam is almost impossible)",
+                      "export": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "bid": "3M",
+                  "desc": "S/O",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3X",
+                  "desc": "FG, NAT (X = oM)",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "3N",
+                  "desc": "SPL in the other major, stronger than via 3!c",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "4m",
+                  "desc": "SPL, stronger than via 3!c",
+                  "export": true,
+                  "children": []
+                },
+                {
+                  "bid": "4M",
+                  "desc": "to play, no interest in slam",
+                  "export": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "bid": "3N",
+              "desc": "4M, SPL in the other major, 13-15 HCP",
+              "export": true,
+              "children": []
+            },
+            {
+              "bid": "4m",
+              "desc": "4M, SPL m, 13-15 HCP",
+              "export": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Abbreviations"
+    },
+    {
+      "type": "paragraph",
+      "text": "An excerpt from http://www.worldbridge.org/wp-content/uploads/2017/04/Guidetocompletion.pdf."
+    },
+    {
+      "type": "paragraph",
+      "text": "The following abbreviations or terms may be used (Note the use of BLOCK\nCAPITALS and SLASHES (/)):"
+    },
+    {
+      "type": "list",
+      "items": [
+        "(5431)       = Any hand with that distribution (suits unknown)\n",
+        "5431         = Five spades, four hearts, three diamonds, one club\n",
+        "54(31)       = A hand with five spades, four hearts, and 3!d1!c or 3!c1!d\n",
+        "54(xx)       = A hand with five spades and four hearts\n",
+        "AGG          = Aggressor. The first player to double or overcall for the defending side\n",
+        "ADV          = Advancer, aggressors partner\n",
+        "ASK          = Asking bid\n",
+        "ART          = Artificial\n",
+        "ATT          = Attitude\n",
+        "B            = Black suit(s)\n",
+        "BAL          = Balanced\n",
+        "BW           = Blackwood\n",
+        "CB           = Checkback\n",
+        "COMP         = Competitive\n",
+        "CONC         = Concentrated (e.g. all values in the bid suits)\n",
+        "CONST        = Constructive\n",
+        "CTRL         = Control\n",
+        "CUE          = Cue-bid\n",
+        "DISC         = Discourage (ing)\n",
+        "E            = Even\n",
+        "ENC          = Encourage (ing)\n",
+        "FRAG         = Fragment\n",
+        "F            = Forcing\n",
+        "F1           = Forcing 1 round\n",
+        "F1R          = Forcing 1 round\n",
+        "F2NT         = Forcing to 2NT\n",
+        "FG           = Forcing to game\n",
+        "4SF          = 4th suit forcing (4SFG, 4SF1)\n",
+        "FREQ         = Frequent\n",
+        "G/T          = Game try\n",
+        "H            = Honour (Ace, King, or Queen)\n",
+        "HCP          = High Card Points\n",
+        "INV          = Invitational\n",
+        "INQ          = Inquiry\n",
+        "KCB          = Keycard Blackwood\n",
+        "L/D          = Lead-directing\n",
+        "LEB          = lebensohl\n",
+        "LHO          = The opponent on your left\n",
+        "LIM          = Limit raise\n",
+        "L/S          = Long suit\n",
+        "L/T          = Less than (length or strength)\n",
+        "M            = Major\n",
+        "MM           = majors\n",
+        "m            = Minor\n",
+        "mm           = minors\n",
+        "MAX          = Maximum, Maximal, Maximal Overcall Double\n",
+        "MIN          = Minimum\n",
+        "NAT          = Natural\n",
+        "NEG          = Negative\n",
+        "NEU          = Neutral\n",
+        "NF           = Nonforcing\n",
+        "NT           = No Trump\n",
+        "NV           = Nonvulnerable\n",
+        "oM           = The other major\n",
+        "om           = The other minor\n",
+        "OPPT         = Opponent(s)\n",
+        "OPT          = Optional\n",
+        "O/S          = Outside\n",
+        "O/C          = Overcall\n",
+        "P/C          = Pass or correct\n",
+        "PEN          = Penalty\n",
+        "PH           = Passed hand\n",
+        "PRE          = Pre-emptive\n",
+        "PUP          = Puppet to (e.g. 2!c demands 2!d)\n",
+        "QUANT        = Quantitative\n",
+        "(R)          = Relay (e.g. 2!c asks for shape description etc)\n",
+        "RESP         = Responder; Response; Responsive\n",
+        "REV          = Reverse\n",
+        "RHO          = The opponent on your right\n",
+        "RKCB         = Roman Keycard Blackwood\n",
+        "R/O          = Reopening\n",
+        "S/P          = Suit preference\n",
+        "S/A          = Suit agreement\n",
+        "S/O          = Signoff, shutout\n",
+        "SOL          = Solid (suit)\n",
+        "S-SOL        = Semi-solid (suit)\n",
+        "SPL          = Splinter, or short suit\n",
+        "S/S          = Short suit\n",
+        "S/T          = Slam try\n",
+        "STAY         = Stayman\n",
+        "STR          = Strong\n",
+        "SUPP         = Support\n",
+        "T/O          = Takeout\n",
+        "TRF          = Transfer\n",
+        "UNT          = Unusual No Trump\n",
+        "VUL or V     = Vulnerable\n",
+        "w/           = With\n",
+        "w/o          = Without\n",
+        "WJO          = Weak jump overcall\n",
+        "WJS          = Weak jump shift\n",
+        "WK           = Weak"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Besides these abbreviations from the WBF, the following abbreviations have been added:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "K/B          = (Optional) KickBack\n",
+        "MED          = medium\n",
+        "T/P          = To Play\n",
+        "UNB          = Unbalanced\n",
+        "CoG          = Choice of Games"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "The following abbreviations are not conform the WBF, but conform the BML definitions:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "D            = Double\n",
+        "R            = Redouble (hence not the reds)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "The following abbreviations are *not* used:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "DBL or X     = Double\n",
+        "RDBL, RD, XX = Redouble"
+      ]
+    }
+  ],
+  "skipped_types": []
+}
